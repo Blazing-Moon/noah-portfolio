@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noah Giesler — Cinematography, Photography, Composition</title>
+  <meta name="description" content="Portfolio of Noah Giesler: cinematographer, gaffer, photographer, and composer. Short films, photography, and atmospheric scores.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Noah Giesler">
+  <meta property="og:description" content="Cinematography, photography, and composition.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts: Instrument Serif (display) + Plus Jakarta Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top bar -->
+  <header class="site-header">
+    <a class="site-mark" href="#top">Noah Giesler</a>
+    <nav class="site-nav">
+      <a href="#gallery">Gallery</a>
+      <a href="#films">Films</a>
+      <a href="#music">Music</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero / personal statement -->
+    <section class="hero reveal">
+      <p class="eyebrow">Portfolio · 2026</p>
+      <h1 class="hero-title">
+        Noah Giesler makes <em>films</em>, <em>photographs</em>,<br>
+        and <em>music</em> that linger.
+      </h1>
+      <p class="hero-lede">
+        I'm a cinematographer, gaffer, and composer based in the Midwest. My work
+        lives in the quiet spaces — in the shape of light on a face, the texture
+        of a held frame, the score that arrives one beat later than you expect.
+        I'm drawn to projects where sound, image, and restraint do more work than
+        spectacle.
+      </p>
+      <p class="hero-lede muted">
+        <em>This is placeholder copy. Replace with your own voice before sending to employers.</em>
+      </p>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section reveal">
+      <header class="section-header">
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-sub">Photographs and film stills.</p>
+      </header>
+
+      <div class="filter-bar" role="tablist" aria-label="Filter gallery">
+        <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="photos" role="tab" aria-selected="false">Photography</button>
+        <button class="filter-btn" data-filter="stills" role="tab" aria-selected="false">Film Stills</button>
+      </div>
+
+      <div id="gallery-grid" class="gallery-grid" aria-live="polite">
+        <p class="gallery-empty">Loading gallery…</p>
+      </div>
+    </section>
+
+    <!-- Films -->
+    <section id="films" class="section reveal">
+      <header class="section-header">
+        <h2 class="section-title">Films</h2>
+        <p class="section-sub">Short films, scenes, and scored projects.</p>
+      </header>
+
+      <div class="films-grid" id="films-grid">
+        <!-- populated by js/films.js -->
+      </div>
+    </section>
+
+    <!-- Music -->
+    <section id="music" class="section reveal">
+      <header class="section-header">
+        <h2 class="section-title">Music</h2>
+        <p class="section-sub">Atmospheric and soundtrack-style compositions.</p>
+      </header>
+
+      <ul class="music-list">
+        <li><a href="https://www.youtube.com/@NoahGiesler" target="_blank" rel="noopener">YouTube<span class="arrow">↗</span></a></li>
+        <li><a href="https://open.spotify.com/artist/0F3ibOTPCZmPEm4n9yYwvd" target="_blank" rel="noopener">Spotify<span class="arrow">↗</span></a></li>
+        <li><a href="https://music.apple.com/us/artist/noah-giesler/1538487682" target="_blank" rel="noopener">Apple Music<span class="arrow">↗</span></a></li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section reveal">
+      <header class="section-header">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-sub">Available for new projects.</p>
+      </header>
+
+      <div class="contact-block">
+        <a class="contact-email" href="mailto:noah@noahgiesler.com">noah@noahgiesler.com</a>
+        <p class="contact-meta">Resume available upon request.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Noah Giesler. All work shown is credited to its respective productions.</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close image">×</button>
+    <button class="lightbox-prev" aria-label="Previous image">‹</button>
+    <button class="lightbox-next" aria-label="Next image">›</button>
+    <figure class="lightbox-figure">
+      <img id="lightbox-img" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+
+  <script src="js/films.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

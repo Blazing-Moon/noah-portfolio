@@ -1,0 +1,3 @@
+Pillow>=10.0.0
+# Optional: install if you have HEIC/HEIF photos (iPhone defaults)
+# pillow-heif>=0.13.0
