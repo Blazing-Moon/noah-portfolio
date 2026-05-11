@@ -11,10 +11,10 @@
   <meta property="og:description" content="Cinematography, photography, and composition.">
   <meta property="og:type" content="website">
 
-  <!-- Fonts: Instrument Serif (display) + Plus Jakarta Sans (body) -->
+  <!-- Fonts: Plus Jakarta Sans (display weight 600 + body weight 450) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -71,8 +71,14 @@
         <p class="section-sub">Short films, scenes, and scored projects.</p>
       </header>
 
+      <div class="filter-bar" id="films-filter-bar" role="tablist" aria-label="Filter films">
+        <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="short" role="tab" aria-selected="false">Short Films</button>
+        <button class="filter-btn" data-filter="school" role="tab" aria-selected="false">School Work</button>
+      </div>
+
       <div class="films-grid" id="films-grid">
-        <!-- populated by js/films.js -->
+        <!-- populated by js/films.js + gallery.js -->
       </div>
     </section>
 
@@ -83,15 +89,13 @@
         <p class="section-sub">Photographs and film stills.</p>
       </header>
 
-      <div class="filter-bar" role="tablist" aria-label="Filter gallery">
-        <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button class="filter-btn" data-filter="photos" role="tab" aria-selected="false">Photography</button>
-        <button class="filter-btn" data-filter="stills" role="tab" aria-selected="false">Film Stills</button>
-      </div>
-
-      <div id="gallery-grid" class="gallery-grid" aria-live="polite">
+      <div id="gallery-grid" class="gallery-grid" aria-live="polite" data-preview-limit="9">
         <p class="gallery-empty">Loading gallery…</p>
       </div>
+
+      <p class="gallery-view-all-wrap">
+        <a href="gallery.html" class="credits-link">View full gallery →</a>
+      </p>
     </section>
 
     <!-- Music -->
