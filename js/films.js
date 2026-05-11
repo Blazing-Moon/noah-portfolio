@@ -21,6 +21,7 @@ const FILMS = [
   /* ----- Short Films (surfaced first — these are the strongest) ----- */
   {
     slug: "tuned-in",
+    type: "short",
     title: "Tuned In",
     category: "Short Film",
     year: "2024",
@@ -36,6 +37,7 @@ const FILMS = [
   },
   {
     slug: "forest-of-dreams",
+    type: "short",
     title: "The Forest of Dreams",
     category: "Short Film",
     year: "2024",
@@ -49,6 +51,7 @@ const FILMS = [
   },
   {
     slug: "we-gather-here-today",
+    type: "short",
     title: "We Gather Here Today",
     category: "Short Film",
     year: "2023",
@@ -64,6 +67,7 @@ const FILMS = [
   },
   {
     slug: "what-we-may-be",
+    type: "short",
     title: "What We May Be",
     category: "Short Film",
     year: "2024",
@@ -79,6 +83,7 @@ const FILMS = [
   },
   {
     slug: "trailing-off",
+    type: "short",
     title: "Trailing Off",
     category: "Short Film",
     year: "2023",
@@ -92,6 +97,7 @@ const FILMS = [
   },
   {
     slug: "part-time-pursuit",
+    type: "short",
     title: "Part-Time Pursuit",
     category: "Short Film · Film Jam",
     year: "2023",
@@ -106,6 +112,7 @@ const FILMS = [
   },
   {
     slug: "zombrothers",
+    type: "short",
     title: "Zombrothers",
     category: "Short Film · Film Jam",
     year: "2023",
@@ -121,6 +128,7 @@ const FILMS = [
   /* ----- School Work — Advanced Cinematography & Sound (Com467) ----- */
   {
     slug: "oner",
+    type: "school",
     title: "Oner",
     category: "School · Com467 Scene",
     year: "2023",
@@ -134,6 +142,7 @@ const FILMS = [
   },
   {
     slug: "dinner-table",
+    type: "school",
     title: "Dinner Table",
     category: "School · Com467 Scene",
     year: "2023",
@@ -147,6 +156,7 @@ const FILMS = [
   },
   {
     slug: "studio",
+    type: "school",
     title: "Studio",
     category: "School · Com467 Scene",
     year: "2023",
@@ -161,6 +171,7 @@ const FILMS = [
   },
   {
     slug: "staging",
+    type: "school",
     title: "Staging",
     category: "School · Com467 Scene",
     year: "2023",
@@ -174,6 +185,7 @@ const FILMS = [
   },
   {
     slug: "mos",
+    type: "school",
     title: "MOS",
     category: "School · Com467 Scene",
     year: "2023",
@@ -191,6 +203,7 @@ const FILMS = [
   /* ----- School Work — Earlier / Other ----- */
   {
     slug: "another-night",
+    type: "school",
     title: "Another Night",
     category: "School · Advanced Editing",
     year: "2023",
@@ -204,6 +217,7 @@ const FILMS = [
   },
   {
     slug: "narrative-short",
+    type: "school",
     title: "Narrative Short",
     category: "School · Intro to Media Production",
     year: "2022",
@@ -218,6 +232,7 @@ const FILMS = [
   },
   {
     slug: "mini-doc",
+    type: "school",
     title: "Mini-Doc",
     category: "School · Intro to Media Production",
     year: "2022",
@@ -231,6 +246,7 @@ const FILMS = [
   },
   {
     slug: "1-minute-move-me",
+    type: "school",
     title: "1-Minute Move Me",
     category: "School · Intro to Media Production",
     year: "2022",
@@ -244,6 +260,7 @@ const FILMS = [
   },
   {
     slug: "msg2teens",
+    type: "school",
     title: "MSG2Teens",
     category: "School · Contest Winner",
     year: "2017",

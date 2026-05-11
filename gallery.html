@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Noah Giesler</title>
+  <meta name="description" content="Photography and film stills by Noah Giesler — cinematographer, gaffer, and composer.">
+
+  <!-- Fonts: Plus Jakarta Sans (display weight 600 + body weight 450) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .gallery-page-wrap {
+      padding-top: clamp(5rem, 12vh, 8rem);
+      padding-bottom: 4rem;
+    }
+    .gallery-page-wrap .section-title { margin-bottom: 0.4rem; }
+    .gallery-page-wrap .section-sub   { margin: 0 0 3rem; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="site-mark" href="index.html">Noah Giesler</a>
+    <nav class="site-nav">
+      <a href="index.html#films">Films</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#music">Music</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="gallery-page-wrap reveal">
+    <a class="back-link" href="index.html#gallery">← Back to portfolio</a>
+
+    <h1 class="section-title">Gallery</h1>
+    <p class="section-sub">Photographs and film stills.</p>
+
+    <div class="filter-bar" id="gallery-filter-bar" role="tablist" aria-label="Filter gallery">
+      <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="filter-btn" data-filter="photos" role="tab" aria-selected="false">Photography</button>
+      <button class="filter-btn" data-filter="stills" role="tab" aria-selected="false">Film Stills</button>
+    </div>
+
+    <div id="gallery-grid" class="gallery-grid" aria-live="polite">
+      <p class="gallery-empty">Loading gallery…</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Noah Giesler. All work shown is credited to its respective productions.</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close image">×</button>
+    <button class="lightbox-prev" aria-label="Previous image">‹</button>
+    <button class="lightbox-next" aria-label="Next image">›</button>
+    <figure class="lightbox-figure">
+      <img id="lightbox-img" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
