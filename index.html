@@ -24,8 +24,8 @@
   <header class="site-header">
     <a class="site-mark" href="#top">Noah Giesler</a>
     <nav class="site-nav">
-      <a href="#gallery">Gallery</a>
       <a href="#films">Films</a>
+      <a href="#gallery">Gallery</a>
       <a href="#music">Music</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -35,21 +35,45 @@
 
     <!-- Hero / personal statement -->
     <section class="hero reveal">
-      <p class="eyebrow">Portfolio · 2026</p>
-      <h1 class="hero-title">
-        Noah Giesler makes <em>films</em>, <em>photographs</em>,<br>
-        and <em>music</em> that linger.
-      </h1>
-      <p class="hero-lede">
-        I'm a cinematographer, gaffer, and composer based in the Midwest. My work
-        lives in the quiet spaces — in the shape of light on a face, the texture
-        of a held frame, the score that arrives one beat later than you expect.
-        I'm drawn to projects where sound, image, and restraint do more work than
-        spectacle.
-      </p>
-      <p class="hero-lede muted">
-        <em>This is placeholder copy. Replace with your own voice before sending to employers.</em>
-      </p>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Portfolio · 2026</p>
+          <h1 class="hero-title">
+            Noah Giesler makes <em>films</em>, <em>photographs</em>,<br>
+            and <em>music</em> that linger.
+          </h1>
+          <p class="hero-lede">
+            I'm a cinematographer, gaffer, and composer based in the Midwest. My work
+            lives in the quiet spaces — in the shape of light on a face, the texture
+            of a held frame, the score that arrives one beat later than you expect.
+            I'm drawn to projects where sound, image, and restraint do more work than
+            spectacle.
+          </p>
+          <p class="hero-lede muted">
+            <em>This is placeholder copy. Replace with your own voice before sending to employers.</em>
+          </p>
+          <p class="hero-credits-link-wrap">
+            <a href="credits.html" class="credits-link">Full credits →</a>
+          </p>
+        </div>
+        <div class="hero-portrait">
+          <div class="portrait-placeholder">
+            <span>Portrait photo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Films -->
+    <section id="films" class="section reveal">
+      <header class="section-header">
+        <h2 class="section-title">Films</h2>
+        <p class="section-sub">Short films, scenes, and scored projects.</p>
+      </header>
+
+      <div class="films-grid" id="films-grid">
+        <!-- populated by js/films.js -->
+      </div>
     </section>
 
     <!-- Gallery -->
@@ -70,18 +94,6 @@
       </div>
     </section>
 
-    <!-- Films -->
-    <section id="films" class="section reveal">
-      <header class="section-header">
-        <h2 class="section-title">Films</h2>
-        <p class="section-sub">Short films, scenes, and scored projects.</p>
-      </header>
-
-      <div class="films-grid" id="films-grid">
-        <!-- populated by js/films.js -->
-      </div>
-    </section>
-
     <!-- Music -->
     <section id="music" class="section reveal">
       <header class="section-header">
@@ -89,6 +101,76 @@
         <p class="section-sub">Atmospheric and soundtrack-style compositions.</p>
       </header>
 
+      <!-- Soundtrack tracks -->
+      <div class="music-tracks-group">
+        <h3 class="music-tracks-label">Selected Soundtrack</h3>
+        <ul class="music-track-list">
+          <li class="music-track">
+            <button class="track-play-btn" aria-label="Play Dream Sequence" data-placeholder>
+              <span class="track-play-icon" aria-hidden="true">▶</span>
+            </button>
+            <div class="track-info">
+              <span class="track-title">Dream Sequence</span>
+              <span class="track-sub">Forest of Dreams · 2024</span>
+            </div>
+            <span class="track-dur">2:34</span>
+          </li>
+          <li class="music-track">
+            <button class="track-play-btn" aria-label="Play Afternoon Light" data-placeholder>
+              <span class="track-play-icon" aria-hidden="true">▶</span>
+            </button>
+            <div class="track-info">
+              <span class="track-title">Afternoon Light</span>
+              <span class="track-sub">What We May Be · 2024</span>
+            </div>
+            <span class="track-dur">3:17</span>
+          </li>
+          <li class="music-track">
+            <button class="track-play-btn" aria-label="Play Woodsong" data-placeholder>
+              <span class="track-play-icon" aria-hidden="true">▶</span>
+            </button>
+            <div class="track-info">
+              <span class="track-title">Woodsong</span>
+              <span class="track-sub">Trailing Off · 2023</span>
+            </div>
+            <span class="track-dur">1:58</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Other music tracks -->
+      <div class="music-tracks-group">
+        <h3 class="music-tracks-label">Other Music</h3>
+        <ul class="music-track-list">
+          <li class="music-track">
+            <button class="track-play-btn" aria-label="Play Ceremony" data-placeholder>
+              <span class="track-play-icon" aria-hidden="true">▶</span>
+            </button>
+            <div class="track-info">
+              <span class="track-title">Ceremony</span>
+              <span class="track-sub">We Gather Here Today · 2023</span>
+            </div>
+            <span class="track-dur">3:42</span>
+          </li>
+          <li class="music-track">
+            <button class="track-play-btn" aria-label="Play Summer Static" data-placeholder>
+              <span class="track-play-icon" aria-hidden="true">▶</span>
+            </button>
+            <div class="track-info">
+              <span class="track-title">Summer Static</span>
+              <span class="track-sub">Original · 2023</span>
+            </div>
+            <span class="track-dur">2:45</span>
+          </li>
+        </ul>
+      </div>
+
+      <p class="music-gallery-link-wrap">
+        <a href="music.html" class="credits-link">View full music gallery →</a>
+      </p>
+
+      <!-- Streaming services -->
+      <h3 class="music-tracks-label music-stream-label">Stream</h3>
       <ul class="music-list">
         <li><a href="https://www.youtube.com/@NoahGiesler" target="_blank" rel="noopener">YouTube<span class="arrow">↗</span></a></li>
         <li><a href="https://open.spotify.com/artist/0F3ibOTPCZmPEm4n9yYwvd" target="_blank" rel="noopener">Spotify<span class="arrow">↗</span></a></li>
