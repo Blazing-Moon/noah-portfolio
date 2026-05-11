@@ -6,9 +6,9 @@
 
 /* ---------- Design tokens ---------- */
 :root {
-  --bg:            #0b0b0c;
-  --bg-soft:       #141416;
-  --bg-surface:    #17171a;
+  --bg:            #4A0F1A;
+  --bg-soft:       #53141e;
+  --bg-surface:    #5a1924;
 
   /* Text — all combinations tested for WCAG AA on --bg */
   --ink:           #f0ece4;   /* primary body — 18.4:1 */
@@ -92,7 +92,7 @@ body::before {
   align-items: baseline;
   justify-content: space-between;
   padding: 1.25rem var(--gutter);
-  background: linear-gradient(to bottom, rgba(11,11,12,0.88) 0%, rgba(11,11,12,0.0) 100%);
+  background: linear-gradient(to bottom, rgba(74,15,26,0.92) 0%, rgba(74,15,26,0.0) 100%);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -146,8 +146,53 @@ main { padding: 0 var(--gutter); max-width: var(--max-w); margin: 0 auto; }
 
 .hero {
   padding: clamp(7rem, 18vh, 12rem) 0 clamp(4rem, 10vh, 8rem);
-  max-width: 58rem;
 }
+.hero-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(2rem, 5vw, 4rem);
+  max-width: 72rem;
+}
+.hero-text { flex: 1; min-width: 0; max-width: 58rem; }
+.hero-portrait {
+  flex: 0 0 auto;
+  width: clamp(150px, 18vw, 230px);
+  padding-top: 3.5rem;   /* align with text below eyebrow */
+}
+.portrait-placeholder {
+  aspect-ratio: 3 / 4;
+  background: var(--bg-soft);
+  border: 1px dashed var(--rule-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-dim);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.portrait-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top center;
+}
+@media (max-width: 640px) {
+  .hero-inner { flex-direction: column-reverse; gap: 1.5rem; }
+  .hero-portrait { width: clamp(100px, 35vw, 160px); padding-top: 0; align-self: flex-end; }
+}
+
+.hero-credits-link-wrap { margin: 1.5rem 0 0; }
+.credits-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  transition: color var(--t-fast) var(--ease);
+}
+.credits-link:hover { color: var(--ink); }
 .eyebrow {
   font-family: var(--font-body);
   font-size: 0.8rem;
@@ -475,7 +520,7 @@ main { padding: 0 var(--gutter); max-width: var(--max-w); margin: 0 auto; }
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: #080809;              /* fully opaque — covers fixed header */
+  background: #0f0305;              /* fully opaque — covers fixed header */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -606,9 +651,8 @@ main { padding: 0 var(--gutter); max-width: var(--max-w); margin: 0 auto; }
   font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--ink-muted);
-  margin: 0 0 2.5rem;
-  padding-bottom: 1.75rem;
-  border-bottom: 1px solid var(--rule);
+  margin: 0 0 0.65rem;
+  /* border-bottom and bottom margin now owned by .detail-logline */
 }
 .detail-meta span + span::before {
   content: "·";
@@ -693,4 +737,207 @@ main { padding: 0 var(--gutter); max-width: var(--max-w); margin: 0 auto; }
 @media (max-width: 640px) {
   .detail-external { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem; }
   .detail-meta span + span::before { margin: 0 0.5rem; }
+}
+
+/* ---------- Film detail — logline ---------- */
+.detail-logline {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin: 0 0 2.5rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ---------- Film detail — mini gallery ---------- */
+.detail-gallery {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--rule);
+}
+.detail-gallery-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin: 0 0 1.25rem;
+}
+.detail-gallery-scroll {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule-strong) transparent;
+}
+.detail-gallery-scroll::-webkit-scrollbar { height: 4px; }
+.detail-gallery-scroll::-webkit-scrollbar-track { background: transparent; }
+.detail-gallery-scroll::-webkit-scrollbar-thumb { background: var(--rule-strong); border-radius: 2px; }
+.detail-gallery-thumb {
+  flex: 0 0 auto;
+  width: clamp(160px, 22vw, 220px);
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  cursor: zoom-in;
+  background: var(--bg-soft);
+  scroll-snap-align: start;
+  border: 0;
+  padding: 0;
+  display: block;
+}
+.detail-gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--t-slow) var(--ease), filter var(--t-med) var(--ease);
+  filter: brightness(0.9);
+}
+.detail-gallery-thumb:hover img,
+.detail-gallery-thumb:focus-visible img {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+
+/* ---------- Music tracks ---------- */
+.music-tracks-group { margin-bottom: 2.5rem; }
+.music-tracks-label {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin: 0 0 1rem;
+}
+.music-stream-label { margin-top: 2.5rem; }
+.music-track-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 36rem;
+}
+.music-track {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.music-track:first-child { border-top: 1px solid var(--rule); }
+.track-play-btn {
+  flex: 0 0 auto;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: 1px solid var(--rule-strong);
+  background: transparent;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  cursor: pointer;
+  transition: background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+  padding-left: 0.15rem; /* optical center for ▶ */
+}
+.track-play-btn:hover,
+.track-play-btn.is-playing {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+.track-info { flex: 1; min-width: 0; }
+.track-title {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.track-sub {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin-top: 0.15rem;
+}
+.track-dur {
+  flex: 0 0 auto;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.music-gallery-link-wrap { margin: 0.5rem 0 0; }
+
+/* ---------- Credits page ---------- */
+.credits-page {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: clamp(5rem, 12vh, 8rem) var(--gutter) 4rem;
+}
+.credits-page-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 3rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+.credit-entry {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.credit-entry:first-of-type { border-top: 1px solid var(--rule); }
+.credit-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0.4rem 0 0.5rem;
+  transition: color var(--t-fast) var(--ease);
+}
+.credit-title a { color: inherit; }
+.credit-title a:hover { color: var(--accent); }
+.credit-logline {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin: 0.5rem 0 0;
+}
+
+/* ---------- Music gallery page ---------- */
+.music-page {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: clamp(5rem, 12vh, 8rem) var(--gutter) 4rem;
+}
+.music-page-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 3rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+.music-page .music-tracks-label { margin-top: 2.5rem; }
+.music-page h3:first-of-type { margin-top: 0; }
+.music-page .music-track-list { max-width: 100%; margin-bottom: 0; }
+.music-page-stream {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--rule);
 }
