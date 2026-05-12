@@ -92,7 +92,7 @@ body::before {
   align-items: baseline;
   justify-content: space-between;
   padding: 1.25rem var(--gutter);
-  background: #150509;
+  background: #241015;
 }
 .site-mark {
   font-family: var(--font-display);
