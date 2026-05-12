@@ -148,18 +148,18 @@ main { padding: 0 var(--gutter); max-width: var(--max-w); margin: 0 auto; }
 }
 .hero-inner {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: clamp(2rem, 5vw, 4rem);
   max-width: 72rem;
 }
 .hero-text { flex: 1; min-width: 0; max-width: 58rem; }
 .hero-portrait {
-  flex: 0 0 auto;
-  width: clamp(150px, 18vw, 230px);
-  padding-top: 3.5rem;   /* align with text below eyebrow */
+  flex: 0 0 clamp(220px, 32vw, 420px);
+  align-self: stretch;
 }
 .portrait-placeholder {
-  aspect-ratio: 3 / 4;
+  height: 100%;
+  min-height: 320px;
   background: var(--bg-soft);
   border: 1px dashed var(--rule-strong);
   display: flex;
@@ -174,13 +174,14 @@ main { padding: 0 var(--gutter); max-width: var(--max-w); margin: 0 auto; }
 }
 .portrait-photo {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  height: 100%;
   object-fit: cover;
   object-position: top center;
 }
 @media (max-width: 640px) {
   .hero-inner { flex-direction: column-reverse; gap: 1.5rem; }
-  .hero-portrait { width: clamp(100px, 35vw, 160px); padding-top: 0; align-self: flex-end; }
+  .hero-portrait { flex: 0 0 auto; width: clamp(100px, 40vw, 180px); align-self: flex-end; }
+  .portrait-photo { aspect-ratio: 3 / 4; height: auto; }
 }
 
 .hero-credits-link-wrap { margin: 1.5rem 0 0; }
