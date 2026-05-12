@@ -66,9 +66,10 @@
   /* ---- Wire up each track ---- */
   tracks.forEach(function (li) {
     const btn      = li.querySelector(".track-play-btn");
+    const title    = li.querySelector(".track-title");
     const scrubber = li.querySelector(".track-scrubber");
 
-    if (btn) btn.addEventListener("click", function () {
+    function handlePlayClick() {
       if (!widgetReady) return;
 
       if (activeTrack && activeTrack !== li) {
@@ -91,7 +92,10 @@
           widget.load(li.dataset.scUrl, { auto_play: true, callback: onLoad });
         }
       }
-    });
+    }
+
+    if (btn)   btn.addEventListener("click", handlePlayClick);
+    if (title) title.addEventListener("click", handlePlayClick);
 
     if (scrubber) {
       scrubber.addEventListener("pointerdown", function () { isScrubbing = true; });
