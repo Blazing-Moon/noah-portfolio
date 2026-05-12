@@ -6,10 +6,10 @@
 (function () {
   "use strict";
 
-  const scroll = document.querySelector(".detail-gallery-scroll");
-  if (!scroll) return;
+  const sideGallery = document.querySelector(".detail-side-gallery");
+  if (!sideGallery) return;
 
-  const thumbs = [...scroll.querySelectorAll(".detail-gallery-thumb")];
+  const thumbs = [...sideGallery.querySelectorAll(".detail-gallery-thumb")];
   if (thumbs.length === 0) return;
 
   let currentIdx = 0;
