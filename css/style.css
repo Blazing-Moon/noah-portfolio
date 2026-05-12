@@ -292,6 +292,9 @@ main { padding: 0 var(--gutter); max-width: var(--max-w); margin: 0 auto; }
 .filter-btn.is-active::after { transform: scaleX(1); }
 
 /* ---------- Gallery grid (CSS-columns masonry) ---------- */
+/* Reserve space on the home page preview so nav scroll to #music
+   isn't thrown off by the async gallery load expanding the layout. */
+.gallery-grid[data-preview-limit] { min-height: 420px; }
 .gallery-grid {
   column-count: 3;
   column-gap: 1rem;
