@@ -92,9 +92,7 @@ body::before {
   align-items: baseline;
   justify-content: space-between;
   padding: 1.25rem var(--gutter);
-  background: linear-gradient(to bottom, rgba(74,15,26,0.92) 0%, rgba(74,15,26,0.0) 100%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: #150509;
 }
 .site-mark {
   font-family: var(--font-display);
