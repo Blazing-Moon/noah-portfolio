@@ -823,12 +823,17 @@ main { padding: 0 var(--gutter); max-width: var(--max-w); margin: 0 auto; }
 }
 .music-track {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.45rem;
   padding: 0.85rem 0;
   border-bottom: 1px solid var(--rule);
 }
 .music-track:first-child { border-top: 1px solid var(--rule); }
+.track-main {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 .track-play-btn {
   flex: 0 0 auto;
   width: 2.2rem;
@@ -843,7 +848,7 @@ main { padding: 0 var(--gutter); max-width: var(--max-w); margin: 0 auto; }
   font-size: 0.65rem;
   cursor: pointer;
   transition: background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
-  padding-left: 0.15rem; /* optical center for ▶ */
+  padding-left: 0.15rem;
 }
 .track-play-btn:hover,
 .track-play-btn.is-playing {
@@ -877,6 +882,54 @@ main { padding: 0 var(--gutter); max-width: var(--max-w); margin: 0 auto; }
   font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
+.track-scrubber-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-left: calc(2.2rem + 1rem); /* align with track-info */
+}
+.track-time {
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+  min-width: 2.4rem;
+}
+.track-scrubber {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    var(--accent) var(--fill, 0%),
+    rgba(255,255,255,0.15) var(--fill, 0%)
+  );
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 0;
+}
+.track-scrubber::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  transition: transform var(--t-fast) var(--ease);
+}
+.track-scrubber::-moz-range-thumb {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: none;
+  cursor: pointer;
+}
+.track-scrubber:hover::-webkit-slider-thumb { transform: scale(1.25); }
+.track-scrubber:hover::-moz-range-thumb    { transform: scale(1.25); }
 .music-gallery-link-wrap { margin: 0.5rem 0 0; }
 
 /* ---------- Credits page ---------- */
