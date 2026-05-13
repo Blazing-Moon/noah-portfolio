@@ -111,6 +111,14 @@
       el.style.animationDelay = `${Math.min(i * 40, 600)}ms`;
       el.addEventListener("click", () => openLightbox(parseInt(el.dataset.index, 10)));
     });
+
+    // If the URL hash targets a section below the gallery (e.g. #music, #contact),
+    // re-scroll after rendering so the layout shift doesn't strand the user mid-page.
+    const hash = window.location.hash;
+    if (hash && hash !== "#gallery") {
+      const target = document.querySelector(hash);
+      if (target) target.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
   /* ------------------------------------------------------------------ */
