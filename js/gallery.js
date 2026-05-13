@@ -101,9 +101,12 @@
     const visibleItems = galleryItems.slice(0, limit);
     if (limit < Infinity) galleryItems = visibleItems;
 
+    // Preview grids (home page) use eager loading so thumbnails are in the DOM
+    // before any nav scroll can happen, preventing layout shifts from lazy loads.
+    const loadAttr = limit < Infinity ? "eager" : "lazy";
     galleryGrid.innerHTML = visibleItems.map((item, idx) => `
       <button type="button" class="gallery-item" data-category="${item.category}" data-index="${idx}" aria-label="View ${escapeAttr(item.caption || 'image ' + (idx + 1))}">
-        <img src="${escapeAttr(item.thumb)}" alt="${escapeAttr(item.caption || '')}" loading="lazy">
+        <img src="${escapeAttr(item.thumb)}" alt="${escapeAttr(item.caption || '')}" loading="${loadAttr}">
       </button>
     `).join("");
 
